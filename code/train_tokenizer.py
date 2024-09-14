@@ -4,7 +4,7 @@ from pathlib import Path
 
 from  tokenizers import ByteLevelBPETokenizer
 
-paths = "/home/hmahomed/lustre/roberta/wura-xh/train.txt"
+paths = "/RoBERTa-isiXhosa/dataset/wura-xh/train.txt"
 
 # Initialize a tokenizer
 tokenizer = ByteLevelBPETokenizer()
@@ -19,4 +19,4 @@ tokenizer.train(files=paths, vocab_size=50_265, min_frequency=2, special_tokens=
 ])
 
 # Save files to disk
-tokenizer.save_model("./")
+tokenizer.save_model("/RoBERTa-isiXhosa/model/")
