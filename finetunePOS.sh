@@ -1,11 +1,6 @@
 #!/bin/bash
 ulimit -s unlimited
 
-module load chpc/python/anaconda/3-2021.11
-#module load chpc/cuda/11.6/SXM2/11.6
-module load chpc/openmpi/4.1.1/gcc-6.1.0
-source /home/hmahomed/myenv/bin/activate
-
 now=$(date +%Y%m%d-%H:%M:%S:%3N)
 
 start=`date +%s`
@@ -17,8 +12,8 @@ pip3 install -r requirements.txt
 for j in 1 2 3 4 5
 do
         export MAX_LENGTH=200
-        export ROBERTA_MODEL=RoBERTa-isiXhosa/output
-        export OUTPUT_DIR=RoBERTa-isiXhosa/finetuned/POS/
+        export ROBERTA_MODEL=RoBERTa-isiXhosa/output/training
+        export OUTPUT_DIR=RoBERTa-isiXhosa/output/finetuning/POS/
         export BATCH_SIZE=16
         export NUM_EPOCHS=20
         export SAVE_STEPS=10000
@@ -28,8 +23,8 @@ do
 
         # Run Python Script
         echo "Starting"
-        python3 /RoBERTa-isiXhosa/masakhane-pos/train_pos.py \
-                --data_dir /RoBERTa-isiXhosa/masakhane-pos/data/${LANG}/ \
+        python3 /RoBERTa-isiXhosa/code//train_pos.py \
+                --data_dir /RoBERTa-isiXhosa/dataset \
                 --model_type roberta \
                 --model_name_or_path $ROBERTA_MODEL \
                 --test_result_file $TEST_RESULT \
@@ -44,7 +39,7 @@ do
                 --save_steps $SAVE_STEPS \
                 --output_dir $OUTPUT_DIR \
                 --seed $SEED \
-                --overwrite_output_dir &>> "/RoBERTa-isiXhosa/finetuned/log_finetune_POS"
+                --overwrite_output_dir &>> "/RoBERTa-isiXhosa/output/finetuning/log_finetune_POS"
 done
 
 end=`date +%s`
