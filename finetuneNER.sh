@@ -11,8 +11,8 @@ pip3 install -r requirements.txt
 for j in 4 5
 do
 	export MAX_LENGTH=164
-	export ROBERTA_MODEL=/RoBERTa-isiXhosa/output/
-	export OUTPUT_DIR=/RoBERTa-isiXhosa/finetuned/NER/
+	export ROBERTA_MODEL=/RoBERTa-isiXhosa/output/training
+	export OUTPUT_DIR=/RoBERTa-isiXhosa/output/finetuning/NER
 	export BATCH_SIZE=32
 	export NUM_EPOCHS=20
 	export SAVE_STEPS=1000
@@ -22,8 +22,8 @@ do
 
 	# Run Python Script
 	echo "Starting"
-	python3 /RoBERTa-isiXhosa/masakhane-ner/code/train_ner.py \
-		--data_dir /RoBERTa-isiXhosa/masakhane-ner/MasakhaNER2.0/data/${LANG}/ \
+	python3 /RoBERTa-isiXhosa/code/finetuning/NER/train_ner.py \
+		--data_dir /RoBERTa-isiXhosa/dataset \
         	--model_type roberta \
         	--model_name_or_path $ROBERTA_MODEL \
 		--test_result_file $TEST_RESULT \
@@ -35,7 +35,7 @@ do
         	--save_steps $SAVE_STEPS \
         	--output_dir $OUTPUT_DIR \
 		--seed $SEED \
-		--overwrite_output_dir &>> "/RoBERTa-isiXhosa/finetuned/log_finetune_NER"
+		--overwrite_output_dir &>> "/RoBERTa-isiXhosa/output/finetuning/log_finetune_NER"
 done
 
 end=`date +%s`
