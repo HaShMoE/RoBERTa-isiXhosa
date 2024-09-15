@@ -20,15 +20,15 @@ python3 train_tokenizer.py
 echo "Training"
 python3 RoBERTa-isiXhosa/code/run_mlm.py \
         --model_type roberta \
-        --tokenizer_name TOKENIZER \
-        --config_name CONFIG \
-        --train_file TRAIN \
-        --validation_file VALID \
+        --tokenizer_name $TOKENIZER \
+        --config_name $CONFIG \
+        --train_file $TRAIN \
+        --validation_file $VALID \
         --do_train \
         --do_eval \
-        --num_train_epochs NUM_EPOCHS \
-        --save_steps SAVE_STEPS \
-        --output_dir OUTPUT_DIR
+        --num_train_epochs $NUM_EPOCHS \
+        --save_steps $SAVE_STEPS \
+        --output_dir $OUTPUT_DIR
 
 end=`date +%s`
 runtime=$(((end-start)/60))
