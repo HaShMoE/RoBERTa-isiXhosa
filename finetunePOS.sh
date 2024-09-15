@@ -11,6 +11,9 @@ now=$(date +%Y%m%d-%H:%M:%S:%3N)
 start=`date +%s`
 
 LANG=xho
+
+pip3 install -r requirements.txt
+
 for j in 1 2 3 4 5
 do
         export MAX_LENGTH=200
@@ -25,7 +28,6 @@ do
 
         # Run Python Script
         echo "Starting"
-	pip3 install -r requirements.txt
         python3 /RoBERTa-isiXhosa/masakhane-pos/train_pos.py \
                 --data_dir /RoBERTa-isiXhosa/masakhane-pos/data/${LANG}/ \
                 --model_type roberta \
