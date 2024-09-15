@@ -5,6 +5,7 @@ now=$(date +%Y%m%d-%H:%M:%S:%3N)
 start=`date +%s`
 
 LANG=xho
+
 pip3 install -r requirements.txt
 
 for j in 1 2 3 4 5
