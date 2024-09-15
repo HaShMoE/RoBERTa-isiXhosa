@@ -1,1 +1,7 @@
-All code will be added to this repo when the code submission is due.
+# Train RoBERTa from scratch 
+
+## Prerequisites
+All required packages are listed in the requirements.txt file and are installed in each of the bash scripts.
+
+## Data
+The data to be used for training 
