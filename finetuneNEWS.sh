@@ -11,8 +11,8 @@ pip3 install -r requirements.txt
 for j in 1 2 3 4 5
 do
         export MAX_LENGTH=256
-        export ROBERTA_MODEL=/RoBERTa-isiXhosa/output/
-        export OUTPUT_DIR=/RoBERTa-isiXhosa/finetuned/NEWS/
+        export ROBERTA_MODEL=/RoBERTa-isiXhosa/output/training
+        export OUTPUT_DIR=/RoBERTa-isiXhosa/output/finetuning/
         export BATCH_SIZE=16
         export NUM_EPOCHS=20
         export SAVE_STEPS=10000
@@ -22,8 +22,8 @@ do
 
         # Run Python Script
         echo "Starting$j"
-        python3 /RoBERTa-isiXhosa/masakhane-news/code/train_textclass.py \
-                --data_dir /RoBERTa-isiXhosa/masakhane-news/data/${LANG}/ \
+        python3 /RoBERTa-isiXhosa/code/finetuning/NEWS/train_textclass.py \
+                --data_dir /RoBERTa-isiXhosa/dataset \
                 --model_type roberta \
                 --model_name_or_path $ROBERTA_MODEL \
                 --output_result $TEST_RESULT \
@@ -39,7 +39,7 @@ do
                 --save_steps $SAVE_STEPS \
                 --output_dir $OUTPUT_DIR \
                 --seed $SEED \
-                --overwrite_output_dir &>> "/RoBERTa-isiXhosa/finetuned/log_finetune_NEWS"
+                --overwrite_output_dir &>> "/RoBERTa-isiXhosa/output/finetuning/log_finetune_NEWS"
 done
 
 end=`date +%s`
