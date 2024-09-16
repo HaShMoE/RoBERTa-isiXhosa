@@ -8,8 +8,8 @@ start=`date +%s`
 export TOKENIZER=/RoBERTa-isiXhosa/model
 export CONFIG=/RoBERTa-isiXhosa/model
 export OUTPUT_DIR=/RoBERTa-isiXhosa/output/training
-export TRAIN=RoBERTa-isiXhosa/dataset/train.txt
-export VALID=RoBERTa-isiXhosa/dataset/valid.txt
+export TRAIN=RoBERTa-isiXhosa/data/train.xh
+export VALID=RoBERTa-isiXhosa/data/valid.xh
 export NUM_EPOCHS=20
 export SAVE_STEPS=1000
 
@@ -18,7 +18,7 @@ echo "Starting"
 pip3 install -r requirements.txt
 python3 train_tokenizer.py
 echo "Training"
-python3 RoBERTa-isiXhosa/training/run_mlm.py \
+python3 RoBERTa-isiXhosa/code/training/run_mlm.py \
         --model_type roberta \
         --tokenizer_name $TOKENIZER \
         --config_name $CONFIG \
