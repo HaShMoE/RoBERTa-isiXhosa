@@ -32,4 +32,4 @@ A BPE tokenizer is used from the Huggingface tokenizers library. The code/tokeni
 The run_mlm.py script from the Huggingface transformers library is used to train the RoBERTa model from scratch. This script is called from the trainbase.sh bash script which also specifies all the hyperparameters used in training.
 
 ## Finetuning 
-Three bash scripts, i.e. finetuneNER, finetuneNEWS and finetunePOS, are used for finetuning. The python scripts called were taken from the Masakhane datasets for each task.
+Three bash scripts, i.e. finetuneNER, finetuneNEWS and finetunePOS, are used for finetuning. The python scripts called were taken from the Masakhane datasets for each task. They have been altered to produce more in-depth results for analysis. These altered scripts can be fond in the code/finetuning directory.
