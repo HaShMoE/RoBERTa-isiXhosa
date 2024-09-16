@@ -38,7 +38,7 @@ do
                 --save_steps $SAVE_STEPS \
                 --output_dir $OUTPUT_DIR \
                 --seed $SEED \
-                --overwrite_output_dir &>> "/RoBERTa-isiXhosa/output//finetuning/NEWS/log_finetune_NEWS"
+                --overwrite_output_dir &>> "/RoBERTa-isiXhosa/output/finetuning/NEWS/log_finetune_NEWS"
 done
 
 end=`date +%s`
