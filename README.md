@@ -4,7 +4,18 @@
 All required packages are listed in the requirements.txt file and are installed in each of the bash scripts.
 
 ## Data
-The data to be used for training 
+### Training
+The data used for training was taken from the isiXhosa portion of the wura dataset and seperated into a training, validation and test set. This is in the data directory.
+
+### Finetuning
+The Masakhane datasets for fintuning are to be cloned in the RoBERTa-isiXhosa directory as shown in the code below.
+'''shell
+cd RoBERTa-isiXhosa
+git clone https://github.com/masakhane-io/masakhane-ner.git
+git clone https://github.com/masakhane-io/masakhane-news.git
+git clone https://github.com/masakhane-io/masakhane-pos.git
+'''
+The language used for finetuning can be specified in the finetuning bash scripts by chnaging the LANG variable from 'xho' (isiXhosa) to the desired language.
 
 ## Tokenization
 A BPE tokenizer is used from the Huggingface tokenizers library. The code/tokenization/train_tokenizer.py script was created to train a BPE tokenizer on the training data. The trainbase.sh script trains a tokenizer and saves the configuration in the model directory.
