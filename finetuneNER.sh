@@ -21,7 +21,7 @@ do
 
 	# Run Python Script
 	echo "Starting"
-	python3 /RoBERTa-isiXhosa/masakhane-ner/code/train_ner.py \
+	python3 /RoBERTa-isiXhosa/code/tokenization/train_ner.py \
 		--data_dir /RoBERTa-isiXhosa/masakhane-ner/MasakhaNER2.0/data/${LANG}/ \
         	--model_type roberta \
         	--model_name_or_path $ROBERTA_MODEL \
