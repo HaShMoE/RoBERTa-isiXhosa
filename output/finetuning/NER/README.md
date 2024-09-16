@@ -1,0 +1,1 @@
+# All NER output will be plaved in this directory

@@ -1,0 +1,1 @@
+# All NEWS output will be available in this directory
