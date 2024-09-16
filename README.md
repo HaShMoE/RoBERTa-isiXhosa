@@ -9,12 +9,14 @@ The data used for training was taken from the isiXhosa portion of the wura datas
 
 ### Finetuning
 The Masakhane datasets for fintuning are to be cloned in the RoBERTa-isiXhosa directory as shown in the code below.
-'''shell
+
+```shell
 cd RoBERTa-isiXhosa
 git clone https://github.com/masakhane-io/masakhane-ner.git
 git clone https://github.com/masakhane-io/masakhane-news.git
 git clone https://github.com/masakhane-io/masakhane-pos.git
-'''
+```
+
 The language used for finetuning can be specified in the finetuning bash scripts by chnaging the LANG variable from 'xho' (isiXhosa) to the desired language.
 
 ## Tokenization
