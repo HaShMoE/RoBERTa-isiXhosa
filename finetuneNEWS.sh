@@ -21,7 +21,7 @@ do
 
         # Run Python Script
         echo "Starting$j"
-        python3 /RoBERTa-isiXhosa/masakhane-news/code/train_textclass.py \
+        python3 /RoBERTa-isiXhosa/code/training/train_textclass.py \
                 --data_dir /RoBERTa-isiXhosa/masakhane-news/data/${LANG}/ \
                 --model_type roberta \
                 --model_name_or_path $ROBERTA_MODEL \
