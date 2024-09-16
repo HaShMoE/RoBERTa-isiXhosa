@@ -1,7 +1,13 @@
 # Train RoBERTa from scratch 
 
 ## Prerequisites
-All required packages are listed in the requirements.txt file and are installed in each of the bash scripts.
+All required packages are listed in the requirements.txt file and are installed in each of the bash scripts. This can be doen using the following command.
+```shell
+pip -r install requirements.txt
+```
+The other requirements are 
+* python 3
+* cuda 11.6
 
 ## Data
 ### Training
