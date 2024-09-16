@@ -33,3 +33,9 @@ The run_mlm.py script from the Huggingface transformers library is used to train
 
 ## Finetuning 
 Three bash scripts, i.e. finetuneNER, finetuneNEWS and finetunePOS, are used for finetuning. The python scripts called were taken from the Masakhane datasets for each task. They have been altered to produce more in-depth results for analysis. These altered scripts can be fond in the code/finetuning directory.
+
+## Instructions
+1. Download all dependencies.
+2. Clone the finetuning dataset repositories.
+3. Train model using trainbase.sh, passing it all hyperparameters.
+4. Finetune model on each task using the finetuneNER.sh, finetuneNEWS.sh and finetunePOS.sh scripts
