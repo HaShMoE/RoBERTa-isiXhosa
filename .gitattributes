@@ -1,1 +1,2 @@
 *.xh filter=lfs diff=lfs merge=lfs -text
+flax_model.msgpack filter=lfs diff=lfs merge=lfs -text
